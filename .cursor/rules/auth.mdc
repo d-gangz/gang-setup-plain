@@ -1,6 +1,7 @@
 ---
 description: Follow these rules when working on auth.
 globs: 
+alwaysApply: false
 ---
 ---
 description: Follow these rules when working on auth.
@@ -12,5 +13,8 @@ It uses Clerk for authentication.
 
 - #### General Rules
 
+- Use Clerk middleware to protect routes.
+- Use Clerk components (`<UserButton>`, `<SignInButton>`, etc.) for UI elements.
 - Import the auth helper with `import { auth } from "@clerk/nextjs/server"` in server components
 - await the auth helper in server actions
+- Use Clerk server-side helpers (`auth()`) in Server Actions to get user ID.
